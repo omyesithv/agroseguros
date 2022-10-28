@@ -5,6 +5,7 @@ import Home  from "./paginas/Home";
 import Registro from './paginas/Registro';
 //import Default  from "./pages/Default";
 //import Dashboard  from "./pages/Dashboard";
+
 function App() {
   return (
     <div>

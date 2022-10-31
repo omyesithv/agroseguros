@@ -20,13 +20,20 @@ app.use(express.static(path.join(__dirname, 'public')));
 //Conexion a Mongodb
 database.mongoConnect();
 
-app.use('/usuarios',usuariosRouter);
+//app.use('/usuarios',usuariosRouter);
 //autorizacion
-app.use(auth);
+//app.use(auth);
 
 //Router
 //app.use('/', indexRouter);
 app.use('/agricultor',agricultorRouter);
+
+// PORT
+const port = process.env.PORT || 4000;
+const server = app.listen(port, () => {
+  console.log("Connected to port " + port);
+});
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

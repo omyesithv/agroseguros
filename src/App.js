@@ -3,6 +3,7 @@ import Layout  from "./paginas/Layout";
 import About  from "./paginas/About";
 import Home  from "./paginas/Home";
 import Registro from './paginas/Registro';
+import ListaAgro from './paginas/listaAgricultor'
 //import Default  from "./pages/Default";
 //import Dashboard  from "./pages/Dashboard";
 
@@ -14,6 +15,7 @@ function App() {
         <Route path="/" element={<Layout />}>
            <Route path="about" element={<About />} />
            <Route path="registro" element={<Registro />} />
+           <Route path="Agricultor" element={<ListaAgro />} />
            <Route path="/" element={<Home />} />
          </Route>
       </Routes>

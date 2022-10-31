@@ -21,14 +21,14 @@ exports.create = function(req,res)
     {
         if(err)
         {
-            console.error(err),
-            response.exito = false,
+            console.error(err)
+            response.exito = false
             response.msg = "Error al intentar Guardar"
             res.json(response)
             return;
         }
 
-        response.exito = true,
+        response.exito = true
         response.gmsg = "Guardado con Exito"
         res.json(response)
     })              
@@ -66,14 +66,14 @@ exports.update = function(req,res)
         function(err){
         if(err)
         {
-            console.error(err),
-            response.exito = false,
+            console.error(err)
+            response.exito = false
             response.msg = "Error al intentar Modificar"
             res.json(response)
             return;
         }
 
-        response.exito = true,
+        response.exito = true
         response.msg = "Modificado con Exito"
         res.json(response)
            
@@ -86,14 +86,14 @@ exports.remove = function(req,res)
     Agricultor.remove({_id : req.params.id},function(err){
         if(err)
         {
-           console.error(err),
-           response.exito = false,
+           console.error(err)
+           response.exito = false
            response.msg = "Error al intentar Eliminar"
            res.json(response)
            return;
         }
     
-        response.exito = true,
+        response.exito = true
         response.msg = "Eliminado con Exito"
         res.json(response)
                

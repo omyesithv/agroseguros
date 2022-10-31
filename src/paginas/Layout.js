@@ -10,7 +10,10 @@ const Layout = () =>{
           <li>
             <Link to="/About">About</Link>
           </li>
-          
+          <li>
+            <Link to="/Agricultor">Agricultores</Link>
+          </li>
+                    
         </ul>
     </nav>
     <hr />

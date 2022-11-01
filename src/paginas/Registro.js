@@ -1,5 +1,6 @@
 import React from 'react';
-
+import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button';
 const Registro = () =>{
     const [values, setValues] = React.useState
     ({
@@ -45,7 +46,7 @@ const Registro = () =>{
     }
 
     return (
-        <form onSubmit={handleSubmit}>
+        <Form onSubmit={handleSubmit}>
         <div className='contenedor-input'>
           <label htmlFor="nombre">Nombre</label>
           <input id="nombre" name="nombre" type="nombre"
@@ -78,9 +79,9 @@ const Registro = () =>{
           />
         </div>
 
-        <button type="submit">Guardar</button>
+        <Button type="submit">Guardar</Button>
 
-        </form>
+        </Form>
     );
 }
    

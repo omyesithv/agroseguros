@@ -79,7 +79,7 @@ const Registro = () =>{
           />
         </div>
 
-        <Button type="submit">Guardar</Button>
+        <Button variant="danger" size="lg" block="block" type="submit">Guardar</Button>
 
         </Form>
     );

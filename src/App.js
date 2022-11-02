@@ -1,11 +1,11 @@
 import './App.css';
 import { Routes, Route } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Layout  from "./paginas/Layout";
-import About  from "./paginas/About";
-import Home  from "./paginas/Home";
-import Registro from './paginas/Registro';
-import ListaAgro from './paginas/listaAgricultor'
+import Layout  from './componentes/Layout';
+import About  from "./componentes/About";
+import Home  from "./componentes/Home";
+import Registro from './componentes/Crear-Agricultor';
+import ListaAgro from './componentes/listaAgricultor'
 //import Default  from "./pages/Default";
 //import Dashboard  from "./pages/Dashboard";
 import {Container, Row, Col   } from 'react-bootstrap';
@@ -16,7 +16,7 @@ function App() {
    
     <Container>
       <Row>
-        <Col md = {12}>
+        <Col md = {8}>
           <div ClassName="wrappe">
             <h1>AGROSEGUROS</h1>
             <Routes>

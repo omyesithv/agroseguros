@@ -15,7 +15,7 @@ const Layout = () =>{
         </Navbar.Brand>  
       </li>
       <li>
-          <Link to="/About" className = 'nav-link'>Inversion</Link>
+          <Link to="/inversion" className = 'nav-link'>Inversion</Link>
         </li>
         <li>
          <Link to="/Agricultor" className = 'nav-link'>Agricultor</Link>    

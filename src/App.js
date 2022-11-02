@@ -2,7 +2,7 @@ import './App.css';
 import { Routes, Route } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Layout  from './componentes/Layout';
-import About  from "./componentes/About";
+import Inversion  from "./componentes/inversion";
 import Home  from "./componentes/Home";
 import Registro from './componentes/Crear-Agricultor';
 import ListaAgro from './componentes/listaAgricultor'
@@ -21,7 +21,7 @@ function App() {
             <h1>AGROSEGUROS</h1>
             <Routes>
             <Route path="/" element={<Layout />}>
-                <Route path="about" element={<About />} />
+                <Route path="inversion" element={<Inversion />} />
                 <Route path="registro" element={<Registro />} />
                 <Route path="Agricultor" element={<ListaAgro />} />
                 <Route path="/" element={<Home />} />

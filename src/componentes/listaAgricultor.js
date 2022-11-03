@@ -32,7 +32,7 @@ class listaAgricultor extends Component{
     render(){
     return (
         <div className='form-wapper'>
-          <Table>
+          <Table className='table-wrapper'>
             <thead>
             <tr>
               <th>Nombres</th>

@@ -1,89 +1,173 @@
-import React from 'react';
+import React, { Component } from "react";
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
-const Registro = () =>{
-    const [values, setValues] = React.useState
-    ({
-        nombre: "",
-        apellido: "",
-        telefono: "",
-        direccion: "",
-    });
+import axios from "axios";
+
+export default class CrearAgro extends Component {
+  constructor(props) {
+    super(props);
+
+    this.onChangeAgronombres = this.onChangeAgronombres.bind(this);
+    this.onChangeAgroapellidos = this.onChangeAgroapellidos.bind(this);
+    this.onChangeAgrocorreo = this.onChangeAgrocorreo.bind(this);
+    this.onChangeAgrocedula = this.onChangeAgrocedula.bind(this);
+    this.onChangeAgrocontraseña = this.onChangeAgrocontraseña.bind(this);
+    this.onChangeAgromatriculai = this.onChangeAgromatriculai.bind(this);
+    this.onChangeAgroagremiacion = this.onChangeAgroagremiacion.bind(this);
+    this.onChangeAgrorut = this.onChangeAgrorut.bind(this);
     
-    function handleSubmit(evt) 
-    {
-     /*
-     Previene el comportamiento default de los
-     formularios el cual recarga el sitio
-     */
-     evt.preventDefault();
-        // Aquí puedes usar values para enviar la información
-        alert("Registro Guardado");
+    this.onSubmit = this.onSubmit.bind(this);
+
+    this.state = {
+        nombres: "",
+        apellidos: "",
+        correo: "",
+        cedula: "",
+        contraseña: "", 
+        matriculai: "",
+        agremiacion: "",
+        rut: "",
+      };
     }
-
-    function handleChange(evt) 
-    {
-      /*
-       evt.target es el elemento que ejecuto el evento
-       name identifica el input y value describe el valor actual
-      */
-       const { target } = evt;
-       const { name, value } = target;
-       console.log(evt.target.value)
-
-      /*
-        Este snippet:
-        1. Clona el estado actual
-        2. Reemplaza solo el valor del
-        input que ejecutó el evento
-        */
-        const newValues = {
-          ...values,
-          [name]: value,
-        };
-        // Sincroniza el estado de nuevo
-        setValues(newValues);
+      
+    onChangeAgronombres(e) {
+      this.setState({ nombres: e.target.value });
     }
+    onChangeAgroapellidos(e) {
+      this.setState({ apellidos: e.target.value });
+    }
+    onChangeAgrocorreo(e) {
+      this.setState({ correo: e.target.value });
+    }
+    
+    onChangeAgrocontraseña(e) {
+      this.setState({ contraseña: e.target.value });
+    }
+    onChangeAgrocedula(e) {
+      this.setState({ cedula: e.target.value });
+    }
+    onChangeAgromatriculai(e) {
+      this.setState({ matriculai: e.target.value });
+    }
+    onChangeAgroagremiacion(e) {
+      this.setState({ agremiacion: e.target.value });
+    }
+    onChangeAgrorut(e) {
+      this.setState({ rut: e.target.value });
+    }
+  
+    onSubmit(e) {
+      e.preventDefault();
+      const AgricultorObject = {
+        nombres: this.state.nombres,
+        apellidos: this.state.apellidos,
+        correo: this.state.correo,
+        cedula: this.state.cedula,
+        contraseña: this.state.contraseña,
+        agremiacion: this.state.agremiacion,
+        matriculai: this.state.matriculai, 
+        rut: this.state.rut,
+      };
+  
+      axios
+        .post("http://localhost:3000/agricultor", AgricultorObject)
+        .then((res) => console.log(res.data));   
+      this.setState({ nombres: "", apellidos: "", correo: "", cedula: "",
+                      contraseña: "", agremiacion: "", matriculai: "", rut:"",      
+      });
+    }
+    render() 
+    {
+  
+      return (
+        <div className="form-wrapper">
+        <Form onSubmit={this.onSubmit}>
+          <Form.Group controlId="nombres">
+            <Form.Label>Nombres</Form.Label>
+            <Form.Control
+              type="text"
+              value={this.state.nombres}
+              onChange={this.onChangeAgronombres}
+            />
+          </Form.Group>
 
-    return (
-        <Form onSubmit={handleSubmit}>
-        <div className='contenedor-input'>
-          <label htmlFor="nombre">Nombre</label>
-          <input id="nombre" name="nombre" type="nombre"
-          value={values.nombre}
-          onChange={handleChange}
-        />
-        </div>
+          <Form.Group controlId="apellidos">
+            <Form.Label>Apellidos</Form.Label>
+            <Form.Control
+              type="text"
+              value={this.state.apellidos}
+              onChange={this.onChangeAgroapellidos}
+            />
+          </Form.Group>
 
-        <div className='contenedor-input'>
-           <label htmlFor="apellido">Apellido</label>
-           <input id="apellido" name="apellido" type="apellido"
-           value={values.apellido}
-           onChange={handleChange}
+          <Form.Group controlId="correo">
+            <Form.Label>Correo</Form.Label>
+            <Form.Control
+              type="text"
+              value={this.state.correo}
+              onChange={this.onChangeAgrocorreo}
+            />
+
+          </Form.Group>
+        
+          <Form.Group controlId="cedula">
+            <Form.Label>Cedula</Form.Label>
+            <Form.Control
+              type="text"
+              value={this.state.cedula}
+              onChange={this.onChangeAgrocedula}
+            />
+          </Form.Group>
+
+          <Form.Group controlId="contraseña">
+            <Form.Label>Contraseña</Form.Label>
+            <Form.Control
+              type="text"
+              value={this.state.contraseña}
+              onChange={this.onChangeAgrocontraseña}
+            />
+          </Form.Group>
+
+          <Form.Group controlId="agemiacion">
+            <Form.Label>Agremiacion</Form.Label>
+            <Form.Control
+              type="text"
+              value={this.state.agremiacion}
+              onChange={this.onChangeAgroagremiacion}
+            />
+            
+          </Form.Group>
+          <Form.Group controlId="matriculai">
+          <Form.Label>Matricula I</Form.Label>
+          <Form.Control
+            type="text"
+            value={this.state.matriculai}
+            onChange={this.onChangeAgromatriculai}
           />
-        </div>
-
-        <div className='contenedor-input'>
-        <label htmlFor="telefono">Telefono</label>
-        <input id="telefono" name="telefono" type="telefono"
-         value={values.telefono}
-         onChange={handleChange}
+          
+        </Form.Group>
+        <Form.Group controlId="Rut">
+        <Form.Label>Rut</Form.Label>
+        <Form.Control
+          type="text"
+          value={this.state.rut}
+          onChange={this.onChangeAgrorut}
         />
-        </div>
+        
+      </Form.Group>
 
-          <div className='contenedor-input'>
-          <label htmlFor="direccion">Direccion</label>
-          <input id="direccion" name="direccion" type="direccion"
-          value={values.direccion}
-          onChange={handleChange}
-          />
-        </div>
-
-        <Button variant="danger" size="lg" block="block" type="submit">Guardar</Button>
-
+          <Button
+            variant="danger"
+            size="lg"
+            block="block"
+            type="submit"
+            className="mt-4"
+          >
+            Crear Agricultor
+          </Button>
         </Form>
-    );
-}
-   
-export default Registro;
-   
+      </div>
+ 
+      );
+   }
+}  

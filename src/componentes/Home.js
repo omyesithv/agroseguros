@@ -1,10 +1,12 @@
 import '../css/estilos.css'
 import { Link } from "react-router-dom";
+import {Form, Button} from 'react-bootstrap';
+
 
 const Home = () =>{
   return(
     <div className='contenedor'>
-      <form >
+      <Form >
         <div className='contenedor-input'>
           <label htmlFor="email">Email  </label>
           <input
@@ -22,12 +24,12 @@ const Home = () =>{
             />
           </div>  
           <div>
-            <button type="submit">INGRESAR</button>
+            <Button type="submit">INGRESAR</Button>
           </div>
           <div>
-            <Link to="/Registro">Registrate</Link>
+            <Link to="/Crear">Registrate</Link>
           </div>
-      </form>
+      </Form>
     </div>  
   );
  }

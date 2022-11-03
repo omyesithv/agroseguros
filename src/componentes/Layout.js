@@ -6,21 +6,22 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 const Layout = () =>{
  return <header className="App-header">
  <Navbar bg ="success" variant = "success">   
-    <Container>
-      <Nav ClassName = "Justyfy-content-left">
-      <ul>
-      <li>
-        <Navbar.Brand>
-          <Link to="/">Home</Link>
-        </Navbar.Brand>  
-      </li>
-      <li>
-          <Link to="/inversion" className = 'nav-link'>Inversion</Link>
-        </li>
-        <li>
-         <Link to="/Agricultor" className = 'nav-link'>Agricultor</Link>    
-        </li>
-      </ul>
+    <Container fluid>
+        
+      <Nav ClassName = "light-blue darken-4">
+        <ul>
+          <li>
+            <Navbar.Brand className="navbar-brand-custom">
+              <Link to="/" className = 'edit-link'>Home</Link>
+            </Navbar.Brand>  
+          </li>
+          <li>
+            <Link to="/inversion" className = 'nav-link'>Inversion</Link>
+          </li>
+          <li>
+          <Link to="/Agricultor" className = 'nav-link'>Agricultor</Link>    
+          </li>
+        </ul>
       </Nav>    
       <Outlet />
     </Container>  

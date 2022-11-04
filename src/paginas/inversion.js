@@ -1,13 +1,13 @@
-import Menu from './menu';
+//import Menu from '../componentes/Menu';
 import {Container } from 'react-bootstrap';
+//import login from  '../componentes/login';
 
 const Inversion = () =>{
   return (
    <Container> 
-    <Menu/>
-    <h1>En construccion</h1>
-  </Container>
-  )
+     En Construccion
+   </Container>
+  );
  }
  
  export default Inversion;

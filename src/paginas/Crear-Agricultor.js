@@ -19,77 +19,77 @@ export default class CrearAgro extends Component {
     this.onSubmit = this.onSubmit.bind(this);
 
     this.state = {
-        nombres: "",
-        apellidos: "",
-        correo: "",
-        cedula: "",
-        contraseña: "", 
-        matriculai: "",
-        agremiacion: "",
-        rut: "",
-      };
-    }
+      nombres: "",
+      apellidos: "",
+      correo: "",
+      cedula: "",
+      contraseña: "", 
+      matriculai: "",
+      agremiacion: "",
+      rut: "",
+    };
+  }
       
-    onChangeAgronombres(e) {
-      this.setState({ nombres: e.target.value });
-    }
-    onChangeAgroapellidos(e) {
-      this.setState({ apellidos: e.target.value });
-    }
-    onChangeAgrocorreo(e) {
-      this.setState({ correo: e.target.value });
-    }
+  onChangeAgronombres(e) {
+    this.setState({ nombres: e.target.value });
+  }
+  onChangeAgroapellidos(e) {
+    this.setState({ apellidos: e.target.value });
+  }
+  onChangeAgrocorreo(e) {
+    this.setState({ correo: e.target.value });
+  }
     
-    onChangeAgrocontraseña(e) {
-      this.setState({ contraseña: e.target.value });
-    }
-    onChangeAgrocedula(e) {
-      this.setState({ cedula: e.target.value });
-    }
-    onChangeAgromatriculai(e) {
-      this.setState({ matriculai: e.target.value });
-    }
-    onChangeAgroagremiacion(e) {
-      this.setState({ agremiacion: e.target.value });
-    }
-    onChangeAgrorut(e) {
-      this.setState({ rut: e.target.value });
-    }
+  onChangeAgrocontraseña(e) {
+    this.setState({ contraseña: e.target.value });
+  }
+  onChangeAgrocedula(e) {
+    this.setState({ cedula: e.target.value });
+  }
+  onChangeAgromatriculai(e) {
+    this.setState({ matriculai: e.target.value });
+  }
+  onChangeAgroagremiacion(e) {
+    this.setState({ agremiacion: e.target.value });
+  }
+  onChangeAgrorut(e) {
+    this.setState({ rut: e.target.value });
+  }
   
-    onSubmit(e) {
-      e.preventDefault();
-      const AgricultorObject = {
-        nombres: this.state.nombres,
-        apellidos: this.state.apellidos,
-        correo: this.state.correo,
-        cedula: this.state.cedula,
-        contraseña: this.state.contraseña,
-        agremiacion: this.state.agremiacion,
-        matriculai: this.state.matriculai, 
-        rut: this.state.rut,
-      };
+  onSubmit(e) {
+    e.preventDefault();
+    const AgricultorObject = {
+      nombres: this.state.nombres,
+      apellidos: this.state.apellidos,
+      correo: this.state.correo,
+      cedula: this.state.cedula,
+      contraseña: this.state.contraseña,
+      agremiacion: this.state.agremiacion,
+      matriculai: this.state.matriculai, 
+      rut: this.state.rut,
+    };
   
-      axios
-        .post("http://localhost:3000/agricultor", AgricultorObject)
-        .then((res) => console.log(res.data));   
+    axios
+      .post("http://localhost:3000/agricultor", AgricultorObject)
+      .then((res) => console.log(res.data));   
       this.setState({ nombres: "", apellidos: "", correo: "", cedula: "",
                       contraseña: "", agremiacion: "", matriculai: "", rut:"",      
-      });
-    }
-    render() 
-    {
+    });
+  }
+  render() 
+  {
   
-      return (
-        <div className="form-wrapper">
-        <Form onSubmit={this.onSubmit}>
-          <Form.Group controlId="nombres">
-            <Form.Label>Nombres</Form.Label>
-            <Form.Control
-              type="text"
-              value={this.state.nombres}
-              onChange={this.onChangeAgronombres}
-            />
-          </Form.Group>
+    return (
+      <div className="form-wrapper">
+      <Form onSubmit={this.onSubmit}>
+      <Form.Group controlId="nombres">
+        <Form.Label>Nombres</Form.Label>
+        <Form.Control
+           type="text"
+           value={this.state.nombres}
+           onChange={this.onChangeAgronombres}
+         />
+       </Form.Group>
 
           <Form.Group controlId="apellidos">
             <Form.Label>Apellidos</Form.Label>

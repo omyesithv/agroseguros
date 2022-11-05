@@ -70,12 +70,13 @@ export default class CrearAgro extends Component {
     };
   
     
-    axios.post(`http://localhost:3000/usuarios/login`)
-    .then(res => {
-      const persons = res.data;
-      this.setState({ persons });
-    })
-  }
+    axios
+    .post("http://localhost:3000/agricultor", AgricultorObject)
+    .then((res) => console.log(res.data));   
+  this.setState({ nombres: "", apellidos: "", correo: "", cedula: "",
+                  contraseña: "", agremiacion: "", matriculai: "", rut:"",      
+  });
+}
   render() 
   {
   

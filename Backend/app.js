@@ -6,7 +6,7 @@ var logger = require('morgan');
 var database = require("./config/database");
 var auth = require("./auth/main_auth");
 var usuariosRouter = require("./routes/usuarios.router");
-
+var cors = require('cors');
 //var indexRouter = require('./routes/index');
 var agricultorRouter = require('./routes/agricultor.router');
 var app = express();
@@ -16,11 +16,14 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(cors());
+// PORT
+const port = process.env.PORT || 4000;
 
 //Conexion a Mongodb
 database.mongoConnect();
 
-//app.use('/usuarios',usuariosRouter);
+app.use('/usuarios',usuariosRouter);
 //autorizacion
 //app.use(auth);
 
@@ -28,12 +31,9 @@ database.mongoConnect();
 //app.use('/', indexRouter);
 app.use('/agricultor',agricultorRouter);
 
-// PORT
-const port = process.env.PORT || 4000;
-const server = app.listen(port, () => {
-  console.log("Connected to port " + port);
-});
-
+// iniciamos nuestro servidor
+app.listen(port)
+console.log('API escuchando en el puerto ' + port)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

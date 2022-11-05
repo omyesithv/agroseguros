@@ -2,6 +2,7 @@ import { useState } from "react";
 import "../css/estilos.css";
 import { Link } from "react-router-dom";
 import { Form, Button } from "react-bootstrap";
+import axios from "axios";
 
 const Home = () => {
   const [datos, setDatos] = useState({
@@ -18,23 +19,21 @@ const Home = () => {
     });
   };
 
-  const enviarDatos = (event) => {
-    fetch('localhost:3000/usuarios/login', {
-        method: 'POST',
-        headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-            weight : this.state.weight,
-            height : this.state.height,
-            imc : this.state.imc,
-        })
-    });
+  const enviarDatos = (e) => {
+    e.preventDefault();
+    const usuarioObject = {
+      usuario: this.state.usuario,
+      password: this.state.password,
+    };
+  
+    // axios
+    //   .post("http://localhost:3000/usuarios/login", usuarioObject)
+    //   .then((res) => console.log(res.data));   
+    //   this.setState({ usuario: "", password: "",       
+    // });
     
-    event.preventDefault();
-    console.log("enviando datos..." + datos.usuario + " " + datos.password);
-  };
+  }
+    
   return (
     <div className="contenedor">
       <div>   

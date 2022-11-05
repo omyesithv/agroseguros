@@ -1,51 +1,60 @@
-import { useState } from "react";
+import React, { Component } from "react";
 import "../css/estilos.css";
 import { Link } from "react-router-dom";
 import { Form, Button } from "react-bootstrap";
 import axios from "axios";
 
-const Home = () => {
-  const [datos, setDatos] = useState({
-    usuario: "",
-    password: "",
-  });
+export default class Home extends Component {
+  constructor(props) {
+    super(props);
 
-  const handleInputChange = (event) => {
-    // console.log(event.target.name)
-    // console.log(event.target.value)
-    setDatos({
-      ...datos,
-      [event.target.name]: event.target.value,
-    });
-  };
+    this.onChangeusuario = this.onChangeusuario.bind(this);
+    this.onChangepassword = this.onChangepassword.bind(this);
+    
+    this.onSubmit = this.onSubmit.bind(this);
 
-  const enviarDatos = (e) => {
+    this.state = {
+      usuario: "",
+      password: "",
+    };
+  }
+      
+  onChangeusuario(e) {
+    this.setState({ usuario: e.target.value });
+  }
+  onChangepassword(e) {
+    this.setState({ password: e.target.value });
+  }
+  
+  onSubmit(e) {
     e.preventDefault();
     const usuarioObject = {
       usuario: this.state.usuario,
       password: this.state.password,
     };
   
-    // axios
-    //   .post("http://localhost:3000/usuarios/login", usuarioObject)
-    //   .then((res) => console.log(res.data));   
-    //   this.setState({ usuario: "", password: "",       
-    // });
     
-  }
-    
+    axios
+    .post("http://localhost:3000/usuarios/login", usuarioObject)
+    .then((res) => console.log(res.data));   
+  this.setState({ usuario: "", password: "",      
+  });
+}
+
+render() 
+  {    
   return (
     <div className="contenedor">
       <div>   
         <h1>INICIO SESION</h1> 
       </div>
-      <Form onSubmit={enviarDatos}>
+      <Form onSubmit={this.onSubmit}>
         <div className='contenedor-input'>
           <input
             type="text"
             placeholder="usuario"
             className="form-control"
-            onChange={handleInputChange}
+            onChange={this.onChangeusuario}
             name="usuario">
           </input>
         </div>
@@ -54,7 +63,7 @@ const Home = () => {
             type="text"
             placeholder="password"
             className="form-control"
-            onChange={handleInputChange}
+            onChange={this.onChangepassword}
             name="password"
           ></input>
         </div>
@@ -69,7 +78,6 @@ const Home = () => {
       </div>
 
     </div>
-  );
-};
-
-export default Home;
+    );
+  }
+}  

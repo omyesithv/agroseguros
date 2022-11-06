@@ -5,6 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Layout = () =>{
  return (
+  <header>
    <nav>
      <ul>
        <li>
@@ -26,6 +27,7 @@ const Layout = () =>{
        </li>
      </ul>
     </nav>
+ </header>  
  );
 }
 

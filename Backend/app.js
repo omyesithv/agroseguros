@@ -17,6 +17,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(cors());
+
 // PORT
 const port = process.env.PORT || 4000;
 
@@ -32,8 +33,10 @@ app.use('/usuarios',usuariosRouter);
 app.use('/agricultor',agricultorRouter);
 
 // iniciamos nuestro servidor
-app.listen(port)
-console.log('API escuchando en el puerto ' + port)
+app.listen(port,() =>{
+  console.log('API escuchando en el puerto ' + port)
+
+})
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

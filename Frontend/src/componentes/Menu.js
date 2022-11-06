@@ -11,7 +11,9 @@ import { Container, Row, Col } from "react-bootstrap";
 
  const Menu=() =>{
     return (
+     
       <Container>
+      <header>
             <h1>AGROSEGUROS</h1>
             <Layout/>
             <Routes>
@@ -23,7 +25,9 @@ import { Container, Row, Col } from "react-bootstrap";
                 <Route path="*" element={<Nofound />} />
               </Route>
             </Routes>     
+    </header>      
     </Container>
+   
     );  
 }
 

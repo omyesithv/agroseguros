@@ -11,23 +11,19 @@ import { Container, Row, Col } from "react-bootstrap";
 
  const Menu=() =>{
     return (
-     
       <Container>
-      <header>
-            <h1>AGROSEGUROS</h1>
-            <Layout/>
-            <Routes>
-              <Route >
-                <Route path="inversion" element={<Inversion />} />
-                <Route path="Crear" element={<CrearAgro />} />
-                <Route path="Agricultor" element={<ListaAgro />} />
-                <Route path="/" element={<Home />} />
-                <Route path="*" element={<Nofound />} />
-              </Route>
-            </Routes>     
-    </header>      
-    </Container>
-   
+        <h1>AGROSEGUROS</h1>
+        <Layout />
+        <Routes>
+          <Route>
+            <Route path="inversion" element={<Inversion />} />
+            <Route path="Crear" element={<CrearAgro />} />
+            <Route path="Agricultor" element={<ListaAgro />} />
+            <Route path="/" element={<Home />} />
+            <Route path="*" element={<Nofound />} />
+          </Route>
+        </Routes>
+      </Container>
     );  
 }
 

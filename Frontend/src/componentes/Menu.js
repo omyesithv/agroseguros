@@ -7,6 +7,7 @@ import Home from "../paginas/Home";
 import Nofound from "../paginas/Nofound";
 import CrearAgro from "../paginas/Crear-Agricultor";
 import ListaAgro from "../paginas/listaAgricultor";
+import BorrarAgricultor from  "../paginas/borrarAgricultor";
 import { Container, Row, Col } from "react-bootstrap";
 
  const Menu=() =>{
@@ -19,6 +20,8 @@ import { Container, Row, Col } from "react-bootstrap";
             <Route path="inversion" element={<Inversion />} />
             <Route path="Crear" element={<CrearAgro />} />
             <Route path="Agricultor" element={<ListaAgro />} />
+            <Route exact path="borrarA/:id" element={<BorrarAgricultor />} />
+        
             <Route path="/" element={<Home />} />
             <Route path="*" element={<Nofound />} />
           </Route>

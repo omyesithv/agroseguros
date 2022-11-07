@@ -41,6 +41,7 @@ componentDidMount = () => {
           <Table striped bordered hover>
             <thead>
             <tr>
+              <th>ID</th>
               <th>Nombres</th>
               <th>Apellidos</th>
               <th>Correo</th>
@@ -55,14 +56,15 @@ componentDidMount = () => {
                   this.state.agricultores.map((agricultor, i) => {
                       return(
                         <tr key={i}>
+                          <td>{agricultor._id}</td>                                
                           <td>{agricultor.nombres}</td>
                           <td>{agricultor.apellidos}</td>
                           <td>{agricultor.correo}</td>
                           <td>{agricultor.agremiacion}</td>
                           <td>{agricultor.matriculai}</td>
                           <td>{agricultor.rut}</td>
-                          <td><Link to={"/update/" + agricultor.correo}>Modificar</Link></td>
-                          <td><Link to={"/delete/" + agricultor.correo}>Eliminar</Link></td>
+                          <td><Link to={"/update/" + agricultor._id}>Modificar</Link></td>
+                          <td><Link to={"/borrarA/" + agricultor.correo}>Eliminar</Link></td>
                         </tr>
                       );
                   })

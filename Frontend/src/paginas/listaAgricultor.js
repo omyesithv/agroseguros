@@ -4,7 +4,7 @@ import { Table  } from 'react-bootstrap';
 import axios from 'axios';
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Link } from "react-router-dom";
-
+import Loading from "../componentes/Loading";
 export default class listaAgricultor extends Component{
   // constructor(props) {
   //   super(props);
@@ -13,8 +13,8 @@ export default class listaAgricultor extends Component{
     , status: false
 }
 
-cargarPeliculas = () => {
-    var url = 'http://localhost:4000/agricultor';
+cargarAgricultores = () => {
+    let url = 'http://localhost:4000/agricultor';
     axios.get(url).then(res => { console.log(res.data)
         this.setState({
             agricultores: res.data
@@ -24,18 +24,13 @@ cargarPeliculas = () => {
 }
 
 componentDidMount = () => {
-    this.cargarPeliculas();
+    this.cargarAgricultores();
 }
       
     
     render(){
-    //   const { error, isLoaded, agricultor } = this.state;
-    // if (error) {
-    //   return <div>Error: {error.message}</div>;
-    // } else if (!isLoaded) {
-    //   return <div> Cargando ... </div>;
-    // } else {
-     return (
+      //if (!this.cargarAgricultores.length) return <Loading />;
+      return (
          
         <div className='form-wapper'>
           <Table striped bordered hover>
@@ -64,7 +59,7 @@ componentDidMount = () => {
                           <td>{agricultor.matriculai}</td>
                           <td>{agricultor.rut}</td>
                           <td><Link to={"/update/" + agricultor._id}>Modificar</Link></td>
-                          <td><Link to={"/borrarA/" + agricultor.correo}>Eliminar</Link></td>
+                          <td><Link to={"/confirmacion/" + agricultor._id}>Eliminar</Link></td>
                         </tr>
                       );
                   })
@@ -74,6 +69,5 @@ componentDidMount = () => {
         </div>
         );
       }
-    }
-  
-   //export default listaAgricultor;
+  }
+   

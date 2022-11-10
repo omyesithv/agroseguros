@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 
 const Loading = () => {
+  const [isLoading,setIsLoading] = useState(true);
+
   return <div>Cargando...</div>;
 };
 

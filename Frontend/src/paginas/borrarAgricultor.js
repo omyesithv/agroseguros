@@ -7,7 +7,7 @@ export default class borrarAgricultor extends Component {
 
     state = { status: false };
      
-    eliminarAgricultot = () => {
+    eliminarAgricultor = () => {
         var request =  this.props.id;
         //let { id } = useParams();
         console.log(request);

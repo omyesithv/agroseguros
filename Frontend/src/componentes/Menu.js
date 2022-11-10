@@ -7,7 +7,7 @@ import Home from "../paginas/Home";
 import Nofound from "../paginas/Nofound";
 import CrearAgro from "../paginas/Crear-Agricultor";
 import ListaAgro from "../paginas/listaAgricultor";
-import BorrarAgricultor from  "../paginas/borrarAgricultor";
+import EditarAgricultor from  "../paginas/EditarAgricultor";
 import Confirmacion from "../componentes/Confirmacion";
 import { Container, Row, Col } from "react-bootstrap";
 
@@ -21,7 +21,7 @@ import { Container, Row, Col } from "react-bootstrap";
             <Route path="eliminarAgricultor/:id" element={<EliminarAgricultor />} />
             <Route path="Crear" element={<CrearAgro />} />
             <Route path="Agricultor" element={<ListaAgro />} />
-            <Route exact path="borrarA/:id" element={<BorrarAgricultor />} />
+            <Route exact path="modificar/:id" element={<EditarAgricultor />} />
             <Route exact path="confirmacion/:id" element={<Confirmacion />} />          
             <Route path="/" element={<Home />} />
             <Route path="*" element={<Nofound />} />

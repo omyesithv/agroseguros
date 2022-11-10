@@ -58,7 +58,7 @@ componentDidMount = () => {
                           <td>{agricultor.agremiacion}</td>
                           <td>{agricultor.matriculai}</td>
                           <td>{agricultor.rut}</td>
-                          <td><Link to={"/update/" + agricultor._id}>Modificar</Link></td>
+                          <td><Link to={"/modificar/" + agricultor._id}>Modificar</Link></td>
                           <td><Link to={"/confirmacion/" + agricultor._id}>Eliminar</Link></td>
                         </tr>
                       );

@@ -22,7 +22,7 @@ import { Container, Row, Col } from "react-bootstrap";
             <Route path="Crear" element={<CrearAgro />} />
             <Route path="Agricultor" element={<ListaAgro />} />
             <Route exact path="modificar/:id" element={<EditarAgricultor />} />
-            <Route exact path="confirmacion/:id" element={<Confirmacion />} />          
+            <Route exact path="confirmacion/:id" element={<Confirmacion />} />
             <Route path="/" element={<Home />} />
             <Route path="*" element={<Nofound />} />
           </Route>

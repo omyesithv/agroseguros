@@ -10,11 +10,11 @@ import ListaAgro from "../paginas/listaAgricultor";
 import EditarAgricultor from  "../paginas/EditarAgricultor";
 import Confirmacion from "../componentes/Confirmacion";
 import { Container, Row, Col } from "react-bootstrap";
+import Login from "../paginas/Login";
 
  const Menu=() =>{
     return (
       <Container>
-        <h1>AGROSEGUROS</h1>
         <Layout />
         <Routes>
           <Route>
@@ -23,7 +23,7 @@ import { Container, Row, Col } from "react-bootstrap";
             <Route path="Agricultor" element={<ListaAgro />} />
             <Route exact path="modificar/:id" element={<EditarAgricultor />} />
             <Route exact path="confirmacion/:id" element={<Confirmacion />} />
-            <Route path="/" element={<Home />} />
+            <Route path="/" element={<Login />} />
             <Route path="*" element={<Nofound />} />
           </Route>
         </Routes>

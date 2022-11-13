@@ -4,7 +4,7 @@ import { Table  } from 'react-bootstrap';
 import axios from 'axios';
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Link } from "react-router-dom";
-import Loading from "../componentes/Loading";
+//import Loading from "../componentes/Loading";
 export default class listaAgricultor extends Component{
   // constructor(props) {
   //   super(props);

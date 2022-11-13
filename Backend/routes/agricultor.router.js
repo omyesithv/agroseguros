@@ -7,6 +7,8 @@ router.get("/",agricultorControler.find);
 router.get("/:id",agricultorControler.findOne);
 router.put("/:id",agricultorControler.update);
 router.delete("/:id",agricultorControler.remove);
+router.post("/login",agricultorControler.login);
+
 
 module.exports = router;
 

@@ -48,6 +48,13 @@ exports.findOne = function(req,res)
     })
 }
 
+exports.login = function(req,res,next)
+{
+    Agricultor.findOne({correo : req.body.correo,contraseña : req.body.contraseña},function(err,agricultor){
+        res.json(agricultor)
+    })
+}
+
 exports.update = function(req,res)
 {
     let agricultor = {

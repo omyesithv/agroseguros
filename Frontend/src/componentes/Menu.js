@@ -11,6 +11,7 @@ import EditarAgricultor from  "../paginas/EditarAgricultor";
 import Confirmacion from "../componentes/Confirmacion";
 import { Container, Row, Col } from "react-bootstrap";
 import Login from "../paginas/Login";
+import VerAgricultor from "../paginas/VerAgricultor";
 
  const Menu=() =>{
     return (
@@ -24,6 +25,7 @@ import Login from "../paginas/Login";
             <Route exact path="modificar/:id" element={<EditarAgricultor />} />
             <Route exact path="confirmacion/:id" element={<Confirmacion />} />
             <Route path="/" element={<Login />} />
+            <Route path="VerAgricultor" element={<VerAgricultor />} />
             <Route path="*" element={<Nofound />} />
           </Route>
         </Routes>

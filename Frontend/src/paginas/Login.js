@@ -68,7 +68,7 @@ function Login() {
     <ProviderUsuario value={usuarioGlobal}>
     <div>
       <Form onSubmit={CargarDatos}>
-        <div>INICIO SESION</div>
+        <div>INICIO SESION.</div>
         <input type="text" value={correo} onChange={ev => setCorreo(ev.target.value)} />
         <input type="text" value={contraseña} onChange={ev => setContraseña(ev.target.value)} />
         <div>

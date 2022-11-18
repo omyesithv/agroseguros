@@ -89,7 +89,11 @@ function Login() {
           <Button type="submit">INGRESAR</Button>
         </div>   
       </Form>
-      <VerAgricultor/>
+      <div>
+        <Link to="/Crear">Registrate</Link>
+      </div>
+ 
+      
     </div> 
     
   )

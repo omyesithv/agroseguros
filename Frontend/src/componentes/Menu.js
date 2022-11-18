@@ -29,12 +29,13 @@ import {LOGIN, LOGOUT, PRIVATE} from '../componentes/router/Path';
           <Route path="/" element={<PublicRoute />}> 
             <Route path="/Login" element={<Login />} />
             <Route path="*" element={<Nofound />} />
+            <Route path="Crear" element={<CrearAgro />} />
+            
           </Route>
           <Route path={PRIVATE} element={<PrivateRoute />}>
             <Route path={PRIVATE} element={<Principal />} /> 
             <Route path={LOGOUT} element={<Logout />} />
             <Route path="eliminarAgricultor/:id" element={<EliminarAgricultor />} />
-            <Route path="Crear" element={<CrearAgro />} />
             <Route path="Agricultor" element={<ListaAgro />} />
             <Route exact path="modificar/:id" element={<EditarAgricultor />} />
             <Route exact path="confirmacion/:id" element={<Confirmacion />} />

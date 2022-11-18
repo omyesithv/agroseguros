@@ -1,4 +1,4 @@
-const Agricultor = require("../modelo/agricultor");
+const Agricultor = require("../models/agricultores.model");
 let response ={
     msg:"",
     exito:false

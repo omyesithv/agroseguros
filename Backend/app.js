@@ -9,8 +9,9 @@ var usuariosRouter = require("./routes/usuarios.router");
 var cors = require('cors');
 //var indexRouter = require('./routes/index');
 var agricultorRouter = require('./routes/agricultor.router');
+const { default: mongoose } = require('mongoose');
 var app = express();
-
+require ("dotenv").config();
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -22,7 +23,11 @@ app.use(cors());
 const port = process.env.PORT || 4000;
 
 //Conexion a Mongodb
-database.mongoConnect();
+//database.mongoConnect();
+mongoose.connect(process.env.MONGOODB_URI)
+.then(()=> console.log("Conexion a mongodb Atlas"))
+.catch((error) => console.error(error));
+
 
 app.use('/usuarios',usuariosRouter);
 //autorizacion

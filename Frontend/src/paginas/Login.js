@@ -5,19 +5,30 @@ import app from "../componentes/app.json";
 import {isNull} from "util";
 import Cookies from "universal-cookie";
 import VerAgricultor from "./VerAgricultor";
-import { ProviderUsuario } from '../componentes/context/ContextoUsuario';
 import { Link } from "react-router-dom";
+import { useAuthContext } from "../componentes/context/authContext";
+import {miclave} from '../componentes/context/Miclave';
+import mialerta from 'sweetalert';
 
 function Login() {
+  const {login} = useAuthContext();
   const [nombres, setNombres ] = useState("");
   const [apellidos, setApellidos ] = useState(""); 
   const [correo, setCorreo] = useState("")
   const [contraseña, setContraseña] = useState("")
   //const [usuario, setUsuario] = useState("")
-  const usuarioGlobal = { nombre: 'Juan', apellido: 'Salazar' };
-
+    
   const {APIHOST}= app;
   const cookies = new Cookies();
+  
+  const MostrarAlerta = () => {
+    mialerta({
+      title:"Error",
+      text:"Correo o Contraseña invalidos",
+      icon: "warning",
+      button:"Aceptar"
+    })
+  }
 
   function CargarDatos(event){
     event.preventDefault()
@@ -37,19 +48,24 @@ function Login() {
       const usuario = res.data;
    
        if(isNull(res.data)){
-      alert("Usuario o Contraseña invalidos");
+      //alert("Usuario o Contraseña invalidos");
+      MostrarAlerta();
       console.log(usuarioActual);
       console.log(correo);
       }else{
        console.log(usuario)
-       console.log(usuarioGlobal);
        setNombres(res.data.nombres); 
        setApellidos(res.data.apellidos); 
-        
-       
+       login();
+
         //window.location.replace('/VerAgricultor');    
       }  
     });
+
+   // if (contraseña === miclave) {
+   //   login();
+   // }  
+    
   }
   
   useEffect(() => {
@@ -57,15 +73,13 @@ function Login() {
       console.log('no render!')
     }else{
       console.log('render!')
-      console.log(nombres);
-       
-      
+      console.log(nombres);  
     }
+    
       
   })
 
   return (
-    <ProviderUsuario value={usuarioGlobal}>
     <div>
       <Form onSubmit={CargarDatos}>
         <div>INICIO SESION.</div>
@@ -75,10 +89,8 @@ function Login() {
           <Button type="submit">INGRESAR</Button>
         </div>   
       </Form>
-      <Link to={"/VerAgricultor" }>Continuar</Link>
-      
+      <VerAgricultor/>
     </div> 
-    </ProviderUsuario>
     
   )
 }

@@ -9,6 +9,8 @@ var usuariosRouter = require("./routes/usuarios.router");
 var cors = require('cors');
 //var indexRouter = require('./routes/index');
 var agricultorRouter = require('./routes/agricultor.router');
+var inversionistaRouter = require('./routes/inversionista.router');
+const inversionistasModel = require('./models/inversionistas.model');
 var app = express();
 
 app.use(logger('dev'));
@@ -31,6 +33,7 @@ app.use('/usuarios',usuariosRouter);
 //Router
 //app.use('/', indexRouter);
 app.use('/agricultor',agricultorRouter);
+app.use('/inversionista',inversionistaRouter);
 
 // iniciamos nuestro servidor
 app.listen(port,() =>{
@@ -55,3 +58,5 @@ app.use(function(err, req, res, next) {
 });
 
 module.exports = app;
+
+

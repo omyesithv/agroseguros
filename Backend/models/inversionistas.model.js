@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 
-const inversionistaSchema = new Schema ({
+const miinversionista = new Schema ({
 
     nombre :
     {
@@ -22,28 +22,28 @@ const inversionistaSchema = new Schema ({
     {
         type:String,
         require:true,
-        max:30
+        max:20
     },
 
     password :
     {
-        type: Number,
+        type: String,
         require:true,
-        max:30
+        max:25
     },
 
     rut: {
         type: String,
         require: true,
-        max:30
+        max:20
     },
 
     estadofinan: {
         type: String,
         require: true,
-        max:30
-    }
+        max:20
+    },
 });
 
 
-module.exports = mongoose.model("inversinistas", inversionistaSchema);
+module.exports = mongoose.model('inversionista', miinversionista);

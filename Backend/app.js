@@ -8,7 +8,8 @@ var auth = require("./auth/main_auth");
 var usuariosRouter = require("./routes/usuarios.router");
 var cors = require('cors');
 //var indexRouter = require('./routes/index');
-var agricultorRouter = require('./routes/agricultor.router');
+const agricultorRouter = require('./routes/agricultor.router');
+const inversionistaRouter = require('./routes/inversionista.router');
 const { default: mongoose } = require('mongoose');
 var app = express();
 require ("dotenv").config();
@@ -23,19 +24,21 @@ app.use(cors());
 const port = process.env.PORT || 4000;
 
 //Conexion a Mongodb
-//database.mongoConnect();
-mongoose.connect(process.env.MONGOODB_URI)
-.then(()=> console.log("Conexion a mongodb Atlas"))
-.catch((error) => console.error(error));
+database.mongoConnect();
+// mongoose.connect(process.env.MONGOODB_URI)
+// .then(()=> console.log("Conexion a mongodb Atlas"))
+// .catch((error) => console.error(error));
 
 
 app.use('/usuarios',usuariosRouter);
 //autorizacion
 //app.use(auth);
 
+
 //Router
 //app.use('/', indexRouter);
 app.use('/agricultor',agricultorRouter);
+app.use('/inversionista',inversionistaRouter);
 
 // iniciamos nuestro servidor
 app.listen(port,() =>{
@@ -56,7 +59,8 @@ app.use(function(err, req, res, next) {
 
   // render the error page
   res.status(err.status || 500);
-  res.render('error');
+  //res.render('error');
+  res.json({ error: err });
 });
 
 module.exports = app;

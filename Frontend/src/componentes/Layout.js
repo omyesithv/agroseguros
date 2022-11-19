@@ -10,7 +10,7 @@ const Layout = () => {
         <ul>
           <li>
             <Navbar.Brand className="navbar-brand-custom">
-              <Link to="/" className="edit-link">
+              <Link to="/Home" className="edit-link">
                 Inicio
               </Link>
             </Navbar.Brand>
@@ -27,9 +27,7 @@ const Layout = () => {
           </li>
         </ul>
         <DropdownButton id="dropdown-basic-button" title="Usuario">
-        <Dropdown.Item href="#/action-1">Cerrar Sesion</Dropdown.Item>
-        <Dropdown.Item href="#/action-1">Inversionista</Dropdown.Item>
-          <Dropdown.Item href="#/action-1">Agricultor</Dropdown.Item>
+        <Dropdown.Item href="/Login">Inicio Sesion</Dropdown.Item>
         </DropdownButton>
       </Container>
     </Navbar>

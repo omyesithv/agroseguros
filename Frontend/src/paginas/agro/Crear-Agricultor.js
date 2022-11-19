@@ -76,6 +76,7 @@ export default class CrearAgro extends Component {
   this.setState({ nombres: "", apellidos: "", correo: "", cedula: "",
                   contraseña: "", agremiacion: "", matriculai: "", rut:"",      
   });
+  window.location.replace('/Login');
 }
   render() 
   {

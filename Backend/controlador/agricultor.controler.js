@@ -29,7 +29,7 @@ exports.create = function(req,res)
         }
 
         response.exito = true,
-        response.gmsg = "Guardado con Exito"
+        response.msg = "Guardado con Exito"
         res.json(response)
     })              
 }
@@ -107,4 +107,3 @@ exports.remove = function(req,res)
     })
     
 }
-    

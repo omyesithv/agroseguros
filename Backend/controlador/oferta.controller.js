@@ -16,7 +16,7 @@ exports.create = function(req,res) {
     })
     
     oferta.save(function(err){
-        if(error) {
+        if(err) {
             console.log(err),
             response.exito = false,
             response.msg = "Error al guardar la financiación"
@@ -29,5 +29,15 @@ exports.create = function(req,res) {
         response.msg = "La financiaciónse guardó correctamente"
         res.json(response)
     })
+
+    
     
 }
+
+exports.find = (function(req,res)
+{
+   Oferta.find(function(err,oferta){
+    res.json(oferta)
+   })
+    
+})

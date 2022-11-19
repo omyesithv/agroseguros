@@ -34,10 +34,25 @@ exports.create = function(req,res) {
         res.json(response)
     })              
 }
-
+//Buscar Todo
 exports.find = function(req,res)
 {
     Inversionista.find(function(err,inversionista){
+        res.json(inversionista)
+    })
+}
+//Buscar por id
+exports.findOne = function(req,res)
+{
+    Inversionista.findOne({_id : req.params.id},function(err,inversionista){
+        res.json(inversionista)
+    })
+}
+
+//Buscar por email y password
+exports.login = function(req,res,next)
+{
+    Inversionista.findOne({email : req.body.email,password : req.body.password},function(err,inversionista){
         res.json(inversionista)
     })
 }

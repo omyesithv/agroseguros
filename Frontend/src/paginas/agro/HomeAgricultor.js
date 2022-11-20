@@ -4,16 +4,20 @@ import VerAgricultor from './VerAgricultor';
 import {LOGOUT} from '../../componentes/router/Path';
 import listaAgricultor from './listaAgricultor';
 import listaInversor from './listainversionista';
+//import EditarAgro from  "./EditarAgricultor";
 
 const HomeAgricultor = () => {
   return (
     <div> 
       <div>
-        <h2>Hola Tiene Acceso como agricultor</h2>
+        <h2>Hola Tiene Acceso </h2>
         <Link to={LOGOUT}>Cerrar sesión</Link>
         
         <listaAgricultor/> 
-        <listaInversor/> 
+        <listaInversor/>
+         
+        
+
       </div>
 
       

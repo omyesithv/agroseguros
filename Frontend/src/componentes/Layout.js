@@ -28,8 +28,6 @@ const Layout = () => {
         </ul>
         <DropdownButton id="dropdown-basic-button" title="Usuario">
         <Dropdown.Item href="/Login">Inicio Sesion</Dropdown.Item>
-        <Dropdown.Item href="/Crear">Agricultor</Dropdown.Item>
-        <Dropdown.Item href="/Login1">Inversionista</Dropdown.Item>
         
         </DropdownButton>
       </Container>

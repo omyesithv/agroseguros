@@ -18,7 +18,7 @@ const EliminarAgricultor = () =>{
 
   return <div style={{ fontSize: "50px" }}>
            <h2>Registro Eliminado </h2>
-           <NavLink to="/Agricultor" className="btn btn-light">Volver</NavLink>&nbsp;&nbsp;&nbsp;&nbsp;
+           <NavLink to="/HomeAgricultor/Agricultor" className="btn btn-light">Volver</NavLink>&nbsp;&nbsp;&nbsp;&nbsp;
          </div>;
 }
 export default EliminarAgricultor

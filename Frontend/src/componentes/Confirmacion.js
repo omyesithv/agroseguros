@@ -7,8 +7,8 @@ const Confirmacion = () => {
     <div>
         <br />
         <h1 style={{color: "red"}}>¿Desea eliminar el agricultor {id}?</h1><br />
-        <NavLink to="/Agricultor" className="btn btn-light">Cancelar</NavLink>&nbsp;&nbsp;&nbsp;&nbsp;
-        <NavLink to={"/eliminarAgricultor/"+id} className="btn btn-danger">Eliminar</NavLink>&nbsp;&nbsp;&nbsp;&nbsp;
+        <NavLink to="/HomeAgricultor/Agricultor" className="btn btn-light">Cancelar</NavLink>&nbsp;&nbsp;&nbsp;&nbsp;
+        <NavLink to={"/HomeAgricultor/eliminarAgricultor/"+id} className="btn btn-danger">Eliminar</NavLink>&nbsp;&nbsp;&nbsp;&nbsp;
            
     </div>
   )

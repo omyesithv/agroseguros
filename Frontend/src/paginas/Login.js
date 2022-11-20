@@ -12,10 +12,10 @@ import mialerta from 'sweetalert';
 
 function Login() {
   const {login} = useAuthContext();
-  const [nombres, setNombres ] = useState("");
-  const [apellidos, setApellidos ] = useState(""); 
-  const [correo, setCorreo] = useState("");
-  const [contraseña, setContraseña] = useState("");
+  const [tipo_usuario, setTipo_usuario ] = useState(""); 
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  
   const [usuario1, setUsuario1] = useState("");
   
   const {APIHOST}= app;
@@ -34,14 +34,14 @@ function Login() {
     event.preventDefault()
     const usuarioActual = {
        
-      correo: correo,
-      contraseña: contraseña,
+      email: email,
+      password: password,
 
  
     };
   
      axios
-     .post(`${APIHOST}/agricultor/login `,usuarioActual)
+     .post(`${APIHOST}/usuarios/login `,usuarioActual)
      .then((res) => { 
       const usuario = res.data;
    
@@ -49,11 +49,10 @@ function Login() {
       //alert("Usuario o Contraseña invalidos");
       MostrarAlerta();
       console.log(usuarioActual);
-      console.log(correo);
+      console.log(email);
       }else{
        console.log(usuario)
-       setNombres(res.data.nombres); 
-       setApellidos(res.data.apellidos); 
+       setTipo_usuario(res.data.tipo_usuario); 
        login();
 
         //window.location.replace('/VerAgricultor');    
@@ -67,11 +66,11 @@ function Login() {
   }
   
   useEffect(() => {
-    if(isNull(nombres)){
+    if(isNull(tipo_usuario)){
       console.log('no render!')
     }else{
       console.log('render!')
-      console.log(nombres);  
+      console.log(tipo_usuario);  
       
     }
     
@@ -82,21 +81,21 @@ function Login() {
   return (
     <div>
       <Form onSubmit={CargarDatos}>
-        <div>INICIO SESION AGRICULTOR</div>
+        <div>INICIO SESION.</div>
         <div>
-          <label htmlFor="elcorreo">Correo:</label>
-          <input type="text" value={correo} onChange={ev => setCorreo(ev.target.value)} />
-          </div>
+            <label htmlFor="elemail">Email:</label>
+            <input type="text" value={email} onChange={ev => setEmail(ev.target.value)} />
+            </div>
         <div>
-          <label htmlFor="lacontraseña">Contraseña:</label> 
-          <input type="text" value={contraseña} onChange={ev => setContraseña(ev.target.value)} />
+            <label htmlFor="elpassword">Password:</label> 
+            <input type="text" value={password} onChange={ev => setPassword(ev.target.value)} />
         </div>
-    
+        
         <div>
-          <Button type="submit">INGRESAR</Button>
+            <Button type="submit">INGRESAR</Button>
         </div>   
-      </Form>
-      <Link to="/Crear">Registrate </Link>
+        </Form>
+          <Link to="/CrearUsuario">Registrate </Link>
       
       
       

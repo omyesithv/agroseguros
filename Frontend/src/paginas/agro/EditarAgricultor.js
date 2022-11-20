@@ -49,7 +49,7 @@ const EditarAgricultor = () => {
         icon: "success",
         button:"Aceptar"
       }).then(res => {
-        window.location.replace('/Agricultor');
+        window.location.replace('/HomeAgricultor/agricultor');
       })
 
       

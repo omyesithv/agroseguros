@@ -4,7 +4,7 @@ import axios from "axios";
 import app from "./app.json";
 import {isNull} from "util";
 import Cookies from "universal-cookie";
-import VerAgricultor from "./VerAgricultor";
+//import VerAgricultor from "./VerAgricultor";
 import { Link } from "react-router-dom";
 import { useAuthContext } from "../componentes/context/authContext";
 import {miclave} from '../componentes/context/Miclave';
@@ -17,7 +17,7 @@ function Login() {
   const [correo, setCorreo] = useState("");
   const [contraseña, setContraseña] = useState("");
   const [usuario1, setUsuario1] = useState("");
-    
+  
   const {APIHOST}= app;
   const cookies = new Cookies();
   
@@ -32,7 +32,6 @@ function Login() {
 
   function CargarDatos(event){
     event.preventDefault()
-    
     const usuarioActual = {
        
       correo: correo,
@@ -40,12 +39,10 @@ function Login() {
 
  
     };
-    
-    if (usuario1 === "Agricultor")
-    {
-    axios
-    .post(`${APIHOST}/agricultor/login `,usuarioActual)
-    .then((res) => { 
+  
+     axios
+     .post(`${APIHOST}/agricultor/login `,usuarioActual)
+     .then((res) => { 
       const usuario = res.data;
    
        if(isNull(res.data)){
@@ -61,8 +58,8 @@ function Login() {
 
         //window.location.replace('/VerAgricultor');    
       }  
-    });
-    }
+     });
+    
    // if (contraseña === miclave) {
    //   login();
    // }  
@@ -75,7 +72,6 @@ function Login() {
     }else{
       console.log('render!')
       console.log(nombres);  
-      console.log(usuario1);
       
     }
     
@@ -86,7 +82,7 @@ function Login() {
   return (
     <div>
       <Form onSubmit={CargarDatos}>
-        <div>INICIO SESION.</div>
+        <div>INICIO SESION AGRICULTOR</div>
         <div>
           <label htmlFor="elcorreo">Correo:</label>
           <input type="text" value={correo} onChange={ev => setCorreo(ev.target.value)} />
@@ -95,27 +91,14 @@ function Login() {
           <label htmlFor="lacontraseña">Contraseña:</label> 
           <input type="text" value={contraseña} onChange={ev => setContraseña(ev.target.value)} />
         </div>
-        <div>
-          <select id="opciones" value = {usuario1} onChange={ev => setUsuario1(ev.target.value)} >
-            <option>Seleccione</option>
-            <option>Agricultor</option>
-            <option>inversionista</option>     
-          </select>
-        </div> 
-
+    
         <div>
           <Button type="submit">INGRESAR</Button>
         </div>   
       </Form>
-
+      <Link to="/Crear">Registrate </Link>
       
-      <div>
-         <h3>Registrate Como:</h3>
-        <Link to="/Crear">Agricultor  </Link>
-        <h3>o</h3>
-        <Link to="/CrearInversion">Inversionista</Link>
-      </div>
- 
+      
       
     </div> 
     

@@ -16,18 +16,21 @@ const Layout = () => {
             </Navbar.Brand>
           </li>
           <li>
-            <Link to="/inversion" className="nav-link">
+            <Link to="/HomeAgricultor/inversionista" className="nav-link">
               Inversion
             </Link>
           </li>
           <li>
-            <Link to="/Agricultor" className="nav-link">
+            <Link to="/HomeAgricultor/agricultor" className="nav-link">
               Agricultor
             </Link>
           </li>
         </ul>
         <DropdownButton id="dropdown-basic-button" title="Usuario">
         <Dropdown.Item href="/Login">Inicio Sesion</Dropdown.Item>
+        <Dropdown.Item href="/Crear">Agricultor</Dropdown.Item>
+        <Dropdown.Item href="/Login1">Inversionista</Dropdown.Item>
+        
         </DropdownButton>
       </Container>
     </Navbar>

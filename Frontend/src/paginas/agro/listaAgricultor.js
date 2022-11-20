@@ -1,10 +1,12 @@
-import '../App.css';
+import '../../App.css';
 import React, { Component  } from 'react';
 import { Table  } from 'react-bootstrap';
 import axios from 'axios';
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Link } from "react-router-dom";
 //import Loading from "../componentes/Loading";
+import {PRIVATE3} from '../../componentes/router/Path';
+
 export default class listaAgricultor extends Component{
   // constructor(props) {
   //   super(props);
@@ -58,7 +60,7 @@ componentDidMount = () => {
                           <td>{agricultor.agremiacion}</td>
                           <td>{agricultor.matriculai}</td>
                           <td>{agricultor.rut}</td>
-                          <td><Link to={"/modificar/" + agricultor._id}>Modificar</Link></td>
+                          <td><Link to={{PRIVATE3} + agricultor._id}>Modificar</Link></td>
                           <td><Link to={"/confirmacion/" + agricultor._id}>Eliminar</Link></td>
                         </tr>
                       );

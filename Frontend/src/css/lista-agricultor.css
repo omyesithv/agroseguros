@@ -1,0 +1,86 @@
+.espaciado {
+    margin-top: 10rem;
+}
+
+.agricultores {
+   
+   
+   margin-top: 2rem;
+   padding: 2rem;
+   background-color:#2B303A;
+   border-radius: 2rem;
+   align-items: center;
+ 
+}
+
+
+
+.grid {
+    margin-top: 12rem;
+    /* display: grid;
+    grid-template-columns: repeat(4,1fr); */
+    gap: 2rem;
+}
+
+
+
+.crear-boton {
+    background-color: #4CAF50;
+    width: 9rem;
+    position: relative;
+    top: 10rem;
+    border-radius: 1rem;
+    text-decoration: none;
+    color: white;
+    outline: none;
+    border: none;
+    padding: 1rem;
+    display: flex;
+    margin-bottom: 2rem;
+    
+    
+    
+    
+  
+   
+    
+}
+
+.division-link {
+    display: flex;
+    gap: 2rem;
+}
+
+@media (min-width: 1105px) {
+    .grid {
+       
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+        
+    }
+
+   
+}
+
+@media (max-width: 1105px) {
+    
+
+    .crear-boton {
+       display: flex;
+       width: 10rem;
+       top: 8rem;
+       
+    }
+}
+
+@media (max-width: 682px) {
+    
+
+    .crear-boton {
+       display: flex;
+       width: 10rem;
+       top: 11rem;
+       
+    }
+}
+

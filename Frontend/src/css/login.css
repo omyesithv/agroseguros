@@ -1,0 +1,146 @@
+
+
+
+
+@media (max-width: 900px) {
+  .contenedor-login {
+ 
+    background-color: #79d17c;
+    border-radius: 2rem;
+    height: 100%;
+    padding: 2rem;
+    border: 2px solid #4CAF50;
+    margin-top: 12rem;
+  
+   
+  }
+  
+}
+
+.link-registrate {
+  margin-top: 5rem;
+  font-size: 1rem;
+}
+
+.login-tittle {
+  font-weight: bold;
+  font-size: 1.5rem;
+  padding: 2rem;
+  font-style: italic;
+}
+
+.input-email {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+
+}
+
+.input-password {
+  display: flex;
+  gap: 1rem;
+  margin-top: 5rem;
+}
+
+.input {
+  border: none;
+  border-bottom: 2px solid #4CAF50;
+ 
+}
+
+.tittle-email {
+  font-size: 1.5rem;
+}
+
+.tittle-password {
+  font-size: 1.5rem;
+}
+
+
+
+
+
+@media (min-width: 900px) {
+  .contenedor-login {
+    border-radius: 2rem 0 0 2rem;
+    padding: 2rem;
+    background-color: #79d17c;
+  }
+
+  .primera-division {
+    margin-top: 7rem;
+    height:500px;
+    max-width: 100%;
+    border-radius: 2rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    background-color: #79d17c;
+   
+  }
+
+  .background_image {
+    background-image: url(../img/comercio.jpg);
+    background-size: cover;
+    border-radius: 2rem 2rem 2rem 0;
+    padding: 0;
+    background-position: center;
+    background-repeat: no-repeat;
+
+  }
+}
+
+.boton-ingresar {
+  background-color: #4CAF50;
+  border: none;
+  margin-top: 2rem;
+  
+}
+
+
+
+
+html, body{
+  height:100%
+
+}
+
+.enlace {
+  outline: none;
+  text-decoration: none;
+  padding: 2px 1px 0;
+
+}
+
+
+.enlace:link {
+  color: #4CAF50;
+}
+
+.enlace:visited {
+ 
+
+  color: #437A16;
+}
+
+.enlace:focus {
+  
+  
+}
+
+.enlace:hover {
+  border-bottom: 1px solid;
+ 
+  
+
+}
+
+.enlace:active {
+  background: #265301;
+  color: #CDFEAA;
+
+  
+
+}
+
+
+

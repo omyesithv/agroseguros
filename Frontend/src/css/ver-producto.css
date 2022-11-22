@@ -1,0 +1,12 @@
+.grid-productos {
+    margin-top: 10rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+}
+
+.productos {
+    background-color: black;
+    padding: 2rem;
+    border-radius: 2rem;
+}

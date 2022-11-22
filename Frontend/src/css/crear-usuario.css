@@ -1,0 +1,28 @@
+
+.contenido-registro {
+    margin-top: 12rem;
+    background-color: #95d297;
+    border-radius: 2rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    height: 25rem;
+    
+}
+
+.contenido-imagen {
+    background-image: url("../img//comercio.jpg");
+    background-size: cover;
+    border-radius: 2rem 2rem 2rem 0;
+}
+
+.division-uno {
+   margin-bottom: 2rem;
+}
+
+.tittle-registro {
+    margin-bottom: 3rem;
+}
+
+.division {
+    margin-top: 9rem;
+}

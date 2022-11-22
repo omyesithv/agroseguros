@@ -4,6 +4,7 @@ import { Button, Form } from 'react-bootstrap'
 import {isNull} from "util";
 import app from "../app.json";
 import { useAuthContext } from "../../componentes/context/authContext";
+import '../../css/crear-usuario.css';
 
 const CrearUsuario = () => {
     const {login} = useAuthContext();
@@ -45,10 +46,15 @@ const CrearUsuario = () => {
          
     }
   return (
+    <div className='contenido-registro'>
+
+
+
+
     <div>
     <Form onSubmit={GuardarDatos}>
-    <div>REGISTRATE.</div>
-    <div>
+    <h1 className='tittle-registro'>Registro</h1>
+    <div className='division-uno'>
         <label htmlFor="elemail">Email:</label>
         <input type="text" value={email} onChange={ev => setEmail(ev.target.value)} />
         </div>
@@ -58,16 +64,21 @@ const CrearUsuario = () => {
     </div>
     <div>
     <select id="opciones" value = {tipo_usuario} onChange={ev => setTipo_usuario(ev.target.value)} >
-    <option>Seleccione</option>
-    <option>Agricultor</option>
-    <option>inversionista</option>     
-  </select>    
-  </div>
+        <option>Seleccione</option>
+        <option>Agricultor</option>
+        <option>inversionista</option>     
+    </select>    
+    </div>
     
     <div>
         <Button type="submit">INGRESAR</Button>
     </div>   
     </Form>
+    </div>
+
+    <div className='contenido-imagen'>
+     
+    </div>
          
     </div>
   )

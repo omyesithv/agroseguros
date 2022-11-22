@@ -69,7 +69,7 @@ export default class CrearAgro extends Component {
       rut: this.state.rut,
     };
   
-    
+    // http://localhost:3000/agricultor
     axios
     .post("http://localhost:3000/agricultor", AgricultorObject)
     .then((res) => console.log(res.data));   
@@ -82,7 +82,7 @@ export default class CrearAgro extends Component {
   {
   
     return (
-      <div className="form-wrapper">
+      <div  className="form-wrapper division ">
       <Form onSubmit={this.onSubmit}>
       <Form.Group controlId="nombres">
         <Form.Label>Nombres</Form.Label>

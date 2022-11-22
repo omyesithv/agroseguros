@@ -1,0 +1,150 @@
+
+* {
+    padding: 0;
+    margin: 0;
+} 
+
+
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100px;
+}
+
+.contenido-servicio {
+   
+    
+    text-align: left;
+
+ 
+
+    
+}
+
+.conteniddo-boton {
+    text-align: right;
+}
+
+
+
+.contenido-informacion {
+    border-radius: 50px 2px;
+    padding: 1.5rem;
+   
+   
+    
+    
+
+}
+.contenido-de-servicios:first-child {
+margin-top: 10rem;
+}
+
+
+
+@media (min-width: 681px ) {
+    .contenido-de-servicios:first-child  {
+        margin-top: 6rem;
+       
+    }
+}
+
+.financiacion {
+    background-image: url("../img/financiacion.jpg");
+    background-repeat: no-repeat, repeat;
+    background-size: cover;
+    background-position: center;
+  
+    
+    
+   
+}
+
+
+.comercializacion {
+    background-image: url("../img/comercio.jpg");
+    background-repeat: no-repeat, repeat;
+    background-size: cover;
+    background-position: center;
+  
+
+}
+
+.cobertura-precio {
+    background-image: url("../img/cobertura.jpg");
+    background-repeat: no-repeat, repeat;
+    background-size: cover;
+    background-position: center;
+  margin-bottom: 5rem;
+}
+
+
+
+.contenido-de-servicios {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    row-gap: 2rem;
+    margin-top: 3rem;
+    
+   
+}
+
+.button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 10px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border: none;
+    border-radius: 15px;
+   
+    
+}
+
+h1 {
+    color: white;
+}
+p {
+    color: white;
+}
+
+.enlace {
+    outline: none;
+    text-decoration: none;
+    padding: 2px 1px 0;
+  
+  }
+  
+  
+  .enlace:link {
+    color: #4CAF50;
+  }
+  
+  .enlace:visited {
+   
+  
+    color: #437A16;
+  }
+  
+  .enlace:focus {
+    
+    
+  }
+  
+  .enlace:hover {
+    border-bottom: 1px solid;
+   
+    
+  
+  }
+  
+  .enlace:active {
+    background: #265301;
+    color: #CDFEAA;
+  
+    
+  
+  }

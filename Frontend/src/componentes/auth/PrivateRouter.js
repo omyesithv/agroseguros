@@ -9,9 +9,13 @@ export default function PrivateRoute() {
     return <Navigate to={LOGIN} />;
   }
 
-  return (
-    <div>
-      <Outlet />
-    </div>
-  );
+  if(isAuthenticated) {
+    return (
+      <div>
+        <Outlet />
+      </div>
+    );
+  }
+  
+  
 }

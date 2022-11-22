@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useAuthContext } from '../componentes/context/authContext';
 import axios from "axios";
 import app from "./app.json";
+import '../css/login.css';
 import {isNull} from "util";
 import { Link } from "react-router-dom";
 //import { useAuthContext } from "../componentes/context/authContext1";
@@ -68,9 +69,12 @@ const Login1 = () =>
         }
    })
   return (
-    <div>
+    <div className='contenedor-login'>
         <Form onSubmit={CargarDatos}>
-      <div>INICIO SESION INVERSIONISTA</div>
+      <div>
+        <h1 className='titulo-login'>Inisia sesión como inversionista</h1>
+        
+        </div>
         <div>
             <label htmlFor="elemail">Email:</label>
             <input type="text" value={email} onChange={ev => setEmail(ev.target.value)} />
@@ -81,7 +85,7 @@ const Login1 = () =>
         </div>
         
         <div>
-            <Button type="submit">INGRESAR</Button>
+            <Button type="submit">Entrar</Button>
         </div>   
         </Form>
     

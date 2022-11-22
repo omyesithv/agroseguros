@@ -8,9 +8,18 @@ var auth = require("./auth/main_auth");
 var usuariosRouter = require("./routes/usuarios.router");
 var cors = require('cors');
 //var indexRouter = require('./routes/index');
-const agricultorRouter = require('./routes/agricultor.router');
+
+
 const inversionistaRouter = require('./routes/inversionista.router');
 const { default: mongoose } = require('mongoose');
+
+var agricultorRouter = require('./routes/agricultor.router');
+var productoRouter = require('./routes/producto.router');
+
+
+
+
+
 var app = express();
 require ("dotenv").config();
 app.use(logger('dev'));
@@ -39,6 +48,9 @@ app.use('/usuarios',usuariosRouter);
 //app.use('/', indexRouter);
 app.use('/agricultor',agricultorRouter);
 app.use('/inversionista',inversionistaRouter);
+
+app.use('/producto',productoRouter);
+
 
 // iniciamos nuestro servidor
 app.listen(port,() =>{

@@ -7,4 +7,6 @@ export const PRIVATE4 = '/HomeAgricultor/confirmacion/:id';
 export const PRIVATE5 = '/HomeAgricultor/Crear';
 export const PRIVATE6 = '/HomeAgricultor/Crearproducto';
 export const PRIVATE7 = '/HomeAgricultor/verProducto';
+export const PRIVATE8 = '/HomeAgricultor/VerAgro';
+
 export const LOGOUT = '/HomeAgricultor/Logout';

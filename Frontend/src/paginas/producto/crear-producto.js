@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import axios from "axios";
+import "../../css/crear-producto.css";
 
 
 
@@ -13,7 +14,8 @@ export default class CrearProducto extends Component {
         this.onChangeProdcantidad = this.onChangeProdcantidad.bind(this);
         this.onChangeProdUbicacion = this.onChangeProdUbicacion.bind(this);
         this.onChangeProdprecio = this.onChangeProdprecio.bind(this);
-
+        
+       
 
         this.onSubmit = this.onSubmit.bind(this);
 
@@ -22,6 +24,8 @@ export default class CrearProducto extends Component {
             cantidad: "",
             ubicacion: "",
             precio: "",
+            
+            
         };
       }
 
@@ -40,13 +44,17 @@ export default class CrearProducto extends Component {
         this.setState({precio: e.target.value});
       }
 
+     
+     
       onSubmit(e) {
         e.preventDefault();
         const ProductoObject = {
             producto: this.state.producto,
-            cantidd: this.state.cantidad,
+            cantidad: this.state.cantidad,
             ubicacion: this.state.ubicacion,
             precio: this.state.precio,
+            
+           
         };
 
         axios
@@ -58,36 +66,45 @@ export default class CrearProducto extends Component {
 
       render() {
         return (
-            <div className="form-wrapper division">
+            <div className="form-wrapper division division-principal">
+              <h1 className="titulo">Agrega un Producto</h1>
                 <Form onSubmit={this.onSubmit}>
                     <Form.Group controlId="producto">
                         <Form.Label>Producto</Form.Label>
                         <Form.Control
                         type="text"
                         value={this.state.producto}
-                        onChange={this.onChangeProdproducto} />
+                        onChange={this.onChangeProdproducto} 
+                        className="input"/>
                     </Form.Group>
                     <Form.Group controlId="cantidad">
                         <Form.Label>Cantidad</Form.Label>
                         <Form.Control
                         type="text"
                         value={this.state.cantidad}
-                        onChange={this.onChangeProdcantidad} />
+                        onChange={this.onChangeProdcantidad} 
+                        className="input"/>
                     </Form.Group>
                     <Form.Group controlId="ubicacion">
                         <Form.Label>Ubicación</Form.Label>
                         <Form.Control
                         type="text"
                         value={this.state.ubicacion}
-                        onChange={this.onChangeProdUbicacion} />
+                        onChange={this.onChangeProdUbicacion}
+                        className="input" />
                     </Form.Group>
                     <Form.Group controlId="precio">
                         <Form.Label>Precio</Form.Label>
                         <Form.Control
                         type="text"
                         value={this.state.precio}
-                        onChange={this.onChangeProdprecio} />
+                        onChange={this.onChangeProdprecio} 
+                        className="input"/>
                     </Form.Group>
+
+                   
+                   
+
 
                     <Button 
                      type="submit"

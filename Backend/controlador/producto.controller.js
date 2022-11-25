@@ -12,7 +12,9 @@ exports.create = function(req,res) {
         producto: req.body.producto,
         cantidad: req.body.cantidad,
         ubicacion: req.body.ubicacion,
-        precio: req.body.precio
+        precio: req.body.precio,
+        agricultor: req.body.nombre,
+        telefono: req.body.telefono
     })
     
     producto.save(function(err){
@@ -53,7 +55,10 @@ exports.update = function(req,res)
         producto: req.body.producto,
         cantidad: req.body.cantidad,
         ubicacion: req.body.ubicacion,
-        precio: req.body.precio
+        precio: req.body.precio,
+        agricultor: req.body.nombre,
+        telefono: req.body.telefono
+
        
    
     }

@@ -1,0 +1,15 @@
+.division-principal {
+    background-color: #2B303A;
+    border-radius: 2rem;
+    margin-top: 15rem;
+   
+}
+
+.division-principal:hover {
+    box-shadow: 3px 2px 5px black;
+}
+
+.titulo {
+    padding: 2rem;
+}
+

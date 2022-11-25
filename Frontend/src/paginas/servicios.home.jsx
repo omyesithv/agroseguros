@@ -3,6 +3,7 @@ import Servicio from "../componentes/servicio";
 import { Container, Row, Col } from "react-bootstrap";
 import "../css/estilos.css";
 import "../css/servicio.css";
+import { PRIVATE } from "../componentes/router/Path";
 
 const pageServicios = () => {
     return (
@@ -15,7 +16,7 @@ const pageServicios = () => {
    nombre="¡Invierte en el agro!" 
    descripcion="Eres inversionista y apasionado por evolucionar el agro en tu país"
    boton="Soy inversionista"
-   link="descripcioninversionista"
+   link="Login"
    color="color1"
    />
    

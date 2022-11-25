@@ -26,6 +26,8 @@ import { LOGIN, LOGOUT, PRIVATE, PRIVATE1,PRIVATE2 , PRIVATE3, PRIVATE4, PRIVATE
 import CrearInver from "../paginas/inversion/CrearInversionista";
 import ServicioAgricultor from "../paginas/descripcionAgricultor";
 import Verproducto from "../paginas/agro/Ver-Producto";
+import EliminarProducto from "../paginas/agro/eliminar-producto";
+import EditarProducto from "../paginas/producto/editar-producto";
 
 
  const Menu=() =>{
@@ -48,11 +50,13 @@ import Verproducto from "../paginas/agro/Ver-Producto";
             <Route path={PRIVATE} element={<HomeAgricultor />} />
             <Route path={PRIVATE6} element={<Crearproducto />} />
             <Route path="home" element={<Home />} />
+            <Route path="eliminar-producto/:id" element={<EliminarProducto />} />
             <Route path={LOGOUT} element={<Logout />} />
             <Route path="eliminarAgricultor/:id" element={<EliminarAgro />} />
             <Route path={PRIVATE5} element={<CrearAgro />} />
             <Route path="/HomeAgricultor/listaAgro" element={<ListaAgro />} />
             <Route path={PRIVATE2} element={<ListaInver />} />
+            <Route path="editar-producto/:id" element={<EditarProducto />} />
             <Route path={PRIVATE7} element={<Verproducto />} />
             <Route exact path={PRIVATE3} element={<EditarAgro />} />
             <Route exact path={PRIVATE4} element={<Confirmacion />} />

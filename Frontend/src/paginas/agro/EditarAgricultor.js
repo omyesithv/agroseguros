@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react'
 import { Button, Form } from 'react-bootstrap';
 import { Link, useParams } from 'react-router-dom';
 import mialerta from 'sweetalert';
+import "../../css/crear-agricultor.css";
 
 const EditarAgricultor = () => {
     const [agricultor, setAgricultor] = useState({
@@ -86,36 +87,42 @@ const EditarAgricultor = () => {
   }
     return(
         <div>
-        <Form onSubmit={handleSubmit}>
+        <Form onSubmit={handleSubmit} className="division-contenido contenido-input contenido-agrcultor">
         <label htmlFor="nombres">Nombres:</label>  
           <input type="text" name= "nombres" 
           value={agricultor.nombres} 
           onChange={handleInputChange}
+          className="input"
         />
         <label htmlFor="apellidos">Apellidos:</label>  
           <input type="text" name= "apellidos" 
           value={agricultor.apellidos} 
           onChange={handleInputChange}
+          className="input"
         />
         <label htmlFor="correo">correo:</label>  
           <input type="text" name= "correo" 
           value={agricultor.correo} 
           onChange={handleInputChange}
+          className="input"
         />
         <label htmlFor="agremiacion">Agremiacion:</label>  
           <input type="text" name= "agremiacion" 
           value={agricultor.agremiacion} 
           onChange={handleInputChange}
+          className="input"
         />
         <label htmlFor="matriculai">Matriculai:</label>  
           <input type="text" name= "matriculai" 
           value={agricultor.matriculai} 
           onChange={handleInputChange}
+          className="input"
         />
         <label htmlFor="rut">Rut:</label>  
           <input type="text" name= "rut" 
           value={agricultor.rut} 
           onChange={handleInputChange}
+          className="input"
         /> 
 
         <Button type="submit" className="btn btn-primary">

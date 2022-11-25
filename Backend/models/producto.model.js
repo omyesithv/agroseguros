@@ -33,6 +33,20 @@ const ProductoSquema = new Schema({
         require: true,
         max:30000000
 
+    },
+
+    agricultor: {
+        type: String,
+        require: true,
+        max:30000000
+    },
+   
+    
+    telefono: {
+        type: Number,
+        require: true,
+        max:30000000
+
     }
 
 

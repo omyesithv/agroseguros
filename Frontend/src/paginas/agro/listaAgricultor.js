@@ -5,7 +5,7 @@ import axios from 'axios';
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Link } from "react-router-dom";
 import "../../css/lista-agricultor.css";
-import {LOGIN, LOGOUT, PRIVATE, PRIVATE1, PRIVATE2, PRIVATE3, PRIVATE4, PRIVATE5, PRIVATE6} from "../../componentes/router/Path";
+import {LOGIN, LOGOUT, PRIVATE, PRIVATE1, PRIVATE2, PRIVATE3, PRIVATE4, PRIVATE5, PRIVATE6, PRIVATE7} from "../../componentes/router/Path";
 //import Loading from "../componentes/Loading";
 
 export default class listaAgricultor extends Component{
@@ -39,13 +39,13 @@ componentDidMount = () => {
 
           <div className='division-link'>
 
-          <Link className=' crear-boton' to={PRIVATE5}>       
+          <Link className=' crear-boton button' to={PRIVATE5}>       
              Crear agricultor
            </Link>
 
-           <Link className='crear-boton' to={PRIVATE6}>
+           <Link className='crear-boton button' to={PRIVATE}>
              
-             Ver productos
+             Volver
            </Link>
 
           </div>
@@ -77,7 +77,8 @@ componentDidMount = () => {
                 <p><strong>Matricula: </strong>{agricultor.matriculai}</p>
                 <p><strong>RUT: </strong>{agricultor.rut}</p>
                                               
-                <Link to={"/HomeAgricultor/confirmacion/" + agricultor._id}>Eliminar</Link>
+                <Link className='button' to={"/HomeAgricultor/confirmacion/" + agricultor._id}>Eliminar</Link>
+                <Link className='button' to={"/HomeAgricultor/modificar/" + agricultor._id}>Modificar</Link>
 
                   </div>
 

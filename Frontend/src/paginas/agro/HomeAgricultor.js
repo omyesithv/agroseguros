@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import VerAgricultor from '../VerAgricultor';
-import {LOGOUT} from '../../componentes/router/Path';
+import {LOGOUT, PRIVATE2, PRIVATE7} from '../../componentes/router/Path';
 import ListaAgricultor from '../agro/listaAgricultor';
 import ListaInversor from '../agro/listainversionista';
 import "../../css/home-agricultor.css";
@@ -21,6 +21,12 @@ const HomeAgricultor = () => {
 
         <Link to="/HomeAgricultor/listaAgro" className='button'>
           Ver agricultores
+        </Link>
+        <Link to={PRIVATE2} className='button'>
+          Ver Inversionistas
+        </Link>
+        <Link to={PRIVATE7} className='button'>
+          Ver Productos
         </Link>
        
         

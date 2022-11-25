@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import axios from "axios";
+import "../../css/crear-agricultor.css";
 
 export default class CrearAgro extends Component {
   constructor(props) {
@@ -82,14 +83,15 @@ export default class CrearAgro extends Component {
   {
   
     return (
-      <div  className="form-wrapper division ">
-      <Form onSubmit={this.onSubmit}>
-      <Form.Group controlId="nombres">
+      <div  className="form-wrapper division-contenido contenido-agrcultor">
+      <Form onSubmit={this.onSubmit} className="contenido-input">
+      <Form.Group controlId="nombres" >
         <Form.Label>Nombres</Form.Label>
         <Form.Control
            type="text"
            value={this.state.nombres}
            onChange={this.onChangeAgronombres}
+           className="input"
          />
        </Form.Group>
 
@@ -99,6 +101,7 @@ export default class CrearAgro extends Component {
               type="text"
               value={this.state.apellidos}
               onChange={this.onChangeAgroapellidos}
+              className="input"
             />
           </Form.Group>
 
@@ -108,6 +111,7 @@ export default class CrearAgro extends Component {
               type="text"
               value={this.state.correo}
               onChange={this.onChangeAgrocorreo}
+              className="input"
             />
 
           </Form.Group>
@@ -118,6 +122,7 @@ export default class CrearAgro extends Component {
               type="text"
               value={this.state.cedula}
               onChange={this.onChangeAgrocedula}
+              className="input"
             />
           </Form.Group>
 
@@ -127,6 +132,7 @@ export default class CrearAgro extends Component {
               type="text"
               value={this.state.contraseña}
               onChange={this.onChangeAgrocontraseña}
+              className="input"
             />
           </Form.Group>
 
@@ -136,6 +142,7 @@ export default class CrearAgro extends Component {
               type="text"
               value={this.state.agremiacion}
               onChange={this.onChangeAgroagremiacion}
+              className="input"
             />
             
           </Form.Group>
@@ -145,6 +152,7 @@ export default class CrearAgro extends Component {
             type="text"
             value={this.state.matriculai}
             onChange={this.onChangeAgromatriculai}
+            className="input"
           />
           
         </Form.Group>
@@ -154,6 +162,7 @@ export default class CrearAgro extends Component {
           type="text"
           value={this.state.rut}
           onChange={this.onChangeAgrorut}
+          className="input"
         />
         
       </Form.Group>
@@ -163,7 +172,7 @@ export default class CrearAgro extends Component {
             size="lg"
             block="block"
             type="submit"
-            className="mt-4"
+            className="mt-4 button"
           >
             Crear Agricultor
           </Button>

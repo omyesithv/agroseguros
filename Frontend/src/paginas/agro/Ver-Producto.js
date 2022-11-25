@@ -44,8 +44,13 @@ export default class verProducto extends Component {
                             );
                         })
                     )}
-
+                    
+                  
                 </div>
+                <Link to="/HomeAgricultor/CrearProducto"  className='button'>
+                    Agregar
+                  </Link>
+             
             </Container>
         );
     }

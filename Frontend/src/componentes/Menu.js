@@ -23,10 +23,11 @@ import PrivateRoute from "./auth/PrivateRouter";
 import PublicRoute from "./router/PublicRouter";
 import Logout from "../paginas/Logout";
 import { LOGIN, LOGOUT, PRIVATE, PRIVATE1,PRIVATE2 , PRIVATE3, PRIVATE4, PRIVATE5, PRIVATE6, PRIVATE7,
-PRIVATE8} from '../componentes/router/Path';
+PRIVATE8,PRIVATE9} from '../componentes/router/Path';
 import CrearInver from "../paginas/inversion/CrearInversionista";
 import ServicioAgricultor from "../paginas/descripcionAgricultor";
 import Verproducto from "../paginas/agro/Ver-Producto";
+//import Crearproducto from "../paginas/agro/CrearProducto";
 
 
  const Menu=() =>{
@@ -47,7 +48,7 @@ import Verproducto from "../paginas/agro/Ver-Producto";
            </Route>  
             <Route path={PRIVATE} element={<PrivateRoute />}> 
             <Route path={PRIVATE} element={<HomeAgricultor />} />
-            <Route path={PRIVATE6} element={<Crearproducto />} />
+            <Route path={PRIVATE6} element={<Crearproducto />} /> 
             <Route path="home" element={<Home />} />
             <Route path={LOGOUT} element={<Logout />} />
             <Route path="eliminarAgricultor/:id" element={<EliminarAgro />} />

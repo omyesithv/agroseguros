@@ -85,7 +85,7 @@ const EditarAgricultor = () => {
           
   }
     return(
-        <div>
+        <div clasName="division contenedor-principal">
         <Form onSubmit={handleSubmit}>
         <label htmlFor="nombres">Nombres:</label>  
           <input type="text" name= "nombres" 

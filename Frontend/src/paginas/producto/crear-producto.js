@@ -22,7 +22,7 @@ export default class CrearProducto extends Component {
             cantidad: "",
             ubicacion: "",
             precio: "",
-            correo: "",
+            
         };
       }
 
@@ -40,15 +40,12 @@ export default class CrearProducto extends Component {
       onChangeProdprecio(e) {
         this.setState({precio: e.target.value});
       }
-      onChangeProdcorreo(e) {
-        this.setState({correo: e.target.value});
-      }
-
+     
       onSubmit(e) {
         e.preventDefault();
         const ProductoObject = {
             producto: this.state.producto,
-            cantidd: this.state.cantidad,
+            cantidad: this.state.cantidad,
             ubicacion: this.state.ubicacion,
             precio: this.state.precio,
             

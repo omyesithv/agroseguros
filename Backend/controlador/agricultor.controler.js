@@ -55,6 +55,13 @@ exports.login = function(req,res,next)
     })
 }
 
+exports.correo = function(req,res)
+{
+    Agricultor.findOne({correo : req.body.correo},function(err,agricultor){
+        res.json(agricultor)
+    })
+}
+
 exports.update = function(req,res)
 {
     let agricultor = {

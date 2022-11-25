@@ -9,21 +9,21 @@ const ProductoSquema = new Schema({
     {
         type: String,
         require: true,
-        max:30000000 
+        max:50 
     },
 
     cantidad:
     {
         type: Number,
         require: true,
-        max:3000000
+    
     },
 
     ubicacion: 
     {
          type: String,
          require: true,
-         max:3000000
+         max:40
 
     },
 
@@ -31,10 +31,16 @@ const ProductoSquema = new Schema({
     {
         type: Number,
         require: true,
-        max:30000000
+        
 
-    }
-
+    },
+    correo:
+    {
+        type: String,
+        require: true ,
+        max:20
+    },
+    
 
 
 });

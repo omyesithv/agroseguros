@@ -22,7 +22,8 @@ import AuthContextProvider from "./context/authContext";
 import PrivateRoute from "./auth/PrivateRouter";
 import PublicRoute from "./router/PublicRouter";
 import Logout from "../paginas/Logout";
-import { LOGIN, LOGOUT, PRIVATE, PRIVATE1,PRIVATE2 , PRIVATE3, PRIVATE4, PRIVATE5, PRIVATE6, PRIVATE7} from '../componentes/router/Path';
+import { LOGIN, LOGOUT, PRIVATE, PRIVATE1,PRIVATE2 , PRIVATE3, PRIVATE4, PRIVATE5, PRIVATE6, PRIVATE7,
+PRIVATE8} from '../componentes/router/Path';
 import CrearInver from "../paginas/inversion/CrearInversionista";
 import ServicioAgricultor from "../paginas/descripcionAgricultor";
 import Verproducto from "../paginas/agro/Ver-Producto";
@@ -56,7 +57,7 @@ import Verproducto from "../paginas/agro/Ver-Producto";
             <Route path={PRIVATE7} element={<Verproducto />} />
             <Route exact path={PRIVATE3} element={<EditarAgro />} />
             <Route exact path={PRIVATE4} element={<Confirmacion />} />
-            <Route path="VerAgricultor" element={<VerAgricultor />} />
+            <Route path={PRIVATE8} element={<VerAgricultor />} />
            </Route> 
         </Routes>
                  

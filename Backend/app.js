@@ -48,7 +48,6 @@ app.use('/usuarios',usuariosRouter);
 //app.use('/', indexRouter);
 app.use('/agricultor',agricultorRouter);
 app.use('/inversionista',inversionistaRouter);
-
 app.use('/producto',productoRouter);
 
 

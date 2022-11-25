@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import  {Form, Button, Container } from 'react-bootstrap';
 import axios from "axios";
 import app from "./app.json";
@@ -10,15 +10,15 @@ import { Link } from "react-router-dom";
 import { useAuthContext } from "../componentes/context/authContext";
 import {miclave} from '../componentes/context/Miclave';
 import mialerta from 'sweetalert';
+import ContextoUsuario   from '../componentes/context/ContextoUsuario';
 
 function Login() {
   const {login} = useAuthContext();
   const [tipo_usuario, setTipo_usuario ] = useState(""); 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  
-  const [usuario1, setUsuario1] = useState("");
-  
+  const {setUsuario} = useContext(ContextoUsuario);
+
   const {APIHOST}= app;
   const cookies = new Cookies();
   
@@ -44,25 +44,24 @@ function Login() {
      axios
      .post(`${APIHOST}/usuarios/login `,usuarioActual)
      .then((res) => { 
-      const usuario = res.data;
-   
-       if(isNull(res.data)){
-      //alert("Usuario o Contraseña invalidos");
-      MostrarAlerta();
-      console.log(usuarioActual);
-      console.log(email);
-      }else{
-       console.log(usuario)
-       setTipo_usuario(res.data.tipo_usuario); 
-       login();
-
-        //window.location.replace('/VerAgricultor');    
-      }  
+        const usuario1 = res.data;
+    
+        if(isNull(res.data)){
+          //alert("Usuario o Contraseña invalidos");
+          MostrarAlerta();
+          console.log(usuarioActual);
+          console.log(email);
+        }else
+        {
+          console.log(usuario1)
+          //setTipo_usuario(res.data.tipo_usuario); 
+         
+         setUsuario (usuario1); 
+        
+          login();
+        }  
      });
     
-   // if (contraseña === miclave) {
-   //   login();
-   // }  
     
   }
   
@@ -71,7 +70,7 @@ function Login() {
       console.log('no render!')
     }else{
       console.log('render!')
-      console.log(tipo_usuario);  
+      console.log(email);  
       
     }
     
@@ -85,26 +84,26 @@ function Login() {
 
       <div className="contenedor-login">
         
-        <Form onSubmit={CargarDatos}>
+      <Form onSubmit={CargarDatos}>
 
-<div >
-  <h1 className="login-tittle">
-  Iniciar sesión
-  </h1>
-  </div>
-    <div className="input-email">
-    <label className="tittle-email" htmlFor="elemail">Email:</label>
-    <input type="text" className="input" value={email} onChange={ev => setEmail(ev.target.value)} />
-    </div>
-    <div className="input-password">
-    <label className="tittle-password" htmlFor="elpassword">Password:</label> 
-    <input type="text" className="input" value={password} onChange={ev => setPassword(ev.target.value)} />
-    </div>
+      <div >
+        <h1 className="login-tittle">
+        Iniciar sesión
+        </h1>
+        </div>
+          <div className="input-email">
+          <label className="tittle-email" htmlFor="elemail">Email:</label>
+          <input type="text" className="input" value={email} onChange={ev => setEmail(ev.target.value)} />
+          </div>
+          <div className="input-password">
+          <label className="tittle-password" htmlFor="elpassword">Password:</label> 
+          <input type="text" className="input" value={password} onChange={ev => setPassword(ev.target.value)} />
+          </div>
 
-<div className="boton-ingresar-division">
-    <Button className="boton-ingresar" type="submit">INGRESAR</Button>
-</div>   
-</Form>
+      <div className="boton-ingresar-division">
+          <Button className="boton-ingresar" type="submit">INGRESAR</Button>
+      </div>   
+      </Form>
 <div>
   
 </div>

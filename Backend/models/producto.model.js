@@ -9,14 +9,13 @@ const ProductoSquema = new Schema({
     {
         type: String,
         require: true,
-        max:50 
+        max:40 
     },
 
     cantidad:
     {
         type: Number,
         require: true,
-    
     },
 
     ubicacion: 
@@ -32,15 +31,22 @@ const ProductoSquema = new Schema({
         type: Number,
         require: true,
         
+    },
+
+    agricultor: {
+        type: String,
+        require: true,
+        max:40
+    },
+   
+    
+    telefono: {
+        type: Number,
+        require: true,
+        max:40
 
     },
-    correo:
-    {
-        type: String,
-        require: true ,
-        max:20
-    },
-    
+
 
 
 });

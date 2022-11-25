@@ -26,8 +26,7 @@ import { LOGIN, LOGOUT, PRIVATE, PRIVATE1,PRIVATE2 , PRIVATE3, PRIVATE4, PRIVATE
 PRIVATE8,PRIVATE9} from '../componentes/router/Path';
 import CrearInver from "../paginas/inversion/CrearInversionista";
 import ServicioAgricultor from "../paginas/descripcionAgricultor";
-import Verproducto from "../paginas/agro/Ver-Producto";
-//import Crearproducto from "../paginas/agro/CrearProducto";
+import Verproducto from "../paginas/producto/Ver-Producto";
 
 
  const Menu=() =>{

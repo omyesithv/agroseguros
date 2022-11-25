@@ -22,6 +22,7 @@ export default class CrearProducto extends Component {
             cantidad: "",
             ubicacion: "",
             precio: "",
+            correo: "",
         };
       }
 
@@ -39,6 +40,9 @@ export default class CrearProducto extends Component {
       onChangeProdprecio(e) {
         this.setState({precio: e.target.value});
       }
+      onChangeProdcorreo(e) {
+        this.setState({correo: e.target.value});
+      }
 
       onSubmit(e) {
         e.preventDefault();
@@ -47,6 +51,7 @@ export default class CrearProducto extends Component {
             cantidd: this.state.cantidad,
             ubicacion: this.state.ubicacion,
             precio: this.state.precio,
+            
         };
 
         axios

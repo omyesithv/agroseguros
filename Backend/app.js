@@ -15,6 +15,7 @@ const { default: mongoose } = require('mongoose');
 
 var agricultorRouter = require('./routes/agricultor.router');
 var productoRouter = require('./routes/producto.router');
+var inversionRouter = require('./routes/inversion.router');
 
 
 
@@ -48,7 +49,7 @@ app.use('/usuarios',usuariosRouter);
 //app.use('/', indexRouter);
 app.use('/agricultor',agricultorRouter);
 app.use('/inversionista',inversionistaRouter);
-
+app.use('/inversion',inversionRouter);
 app.use('/producto',productoRouter);
 
 

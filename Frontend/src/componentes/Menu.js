@@ -6,7 +6,7 @@ import Home from "../paginas/servicios.home";
 import Nofound from "../paginas/Nofound";
 import CrearAgro from "../paginas/agro/Crear-Agricultor";
 import ListaAgro from "../paginas/agro/listaAgricultor";
-import ListaInver from "../paginas/agro/listainversionista";
+import ListaInver from "../paginas/inversion/HomeInversionista";
 import EditarAgro from  "../paginas/agro/EditarAgricultor";
 import EliminarAgro from "../paginas/agro/EliminarAgricultor";
 import Crearusuario from "../paginas/agro/CrearUsuario";

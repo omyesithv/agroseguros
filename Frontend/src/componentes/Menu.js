@@ -27,6 +27,8 @@ PRIVATE8,PRIVATE9} from '../componentes/router/Path';
 import CrearInver from "../paginas/inversion/CrearInversionista";
 import ServicioAgricultor from "../paginas/descripcionAgricultor";
 import Verproducto from "../paginas/producto/Ver-Producto";
+//import EliminarProducto from "../paginas/agro/eliminar-producto";
+import EditarProducto from "../paginas/producto/editar-producto";
 
 
  const Menu=() =>{
@@ -58,6 +60,7 @@ import Verproducto from "../paginas/producto/Ver-Producto";
             <Route exact path={PRIVATE3} element={<EditarAgro />} />
             <Route exact path={PRIVATE4} element={<Confirmacion />} />
             <Route path={PRIVATE8} element={<VerAgricultor />} />
+            <Route exact path={PRIVATE9} element={<EditarProducto />} />
            </Route> 
         </Routes>
                  
